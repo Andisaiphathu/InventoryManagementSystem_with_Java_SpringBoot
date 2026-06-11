@@ -36,7 +36,7 @@ public class Supplier {
 
     @PrePersist
     protected void onCreate() {
-        this.createdAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();   
     }
 
     @OneToMany(mappedBy = "supplier")

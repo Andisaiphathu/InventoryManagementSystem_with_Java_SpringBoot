@@ -31,6 +31,7 @@ public class User {
     private String username;
 
     @NotBlank (message = "Password is required")
+    @JsonIgnore
     private String password;
 
     @NotBlank (message = "Contact details are required")

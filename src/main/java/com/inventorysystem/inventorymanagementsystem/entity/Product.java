@@ -2,6 +2,7 @@ package com.inventorysystem.inventorymanagementsystem.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,25 +25,24 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //private String productCategory;
 
     @NotBlank(message = "Name is required")
     private String name;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false, length = 50)
     @NotBlank(message = "Sku is required")
     private String sku;
 
-    @PositiveOrZero(message = "Price must not be negative")
+    @Positive(message = "Price must be greater than 0")
     private double price;
 
     @PositiveOrZero(message = "Quantity must not be negative")
     private int quantity;
 
-    @PositiveOrZero(message = "Quantity must not be negative")
+    @PositiveOrZero(message = "maximum products must not be negative")
     private int maximumProducts;
 
-    @PositiveOrZero(message = "Quantity must not be negative")
+    @PositiveOrZero(message = "minimum products must not be negative")
     private int minimumProducts;
 
     private String description;
@@ -71,7 +71,6 @@ public class Product {
     public String toString() {
         return "Product{" +
                 "id=" + id +
-                //", productCategory='" + productCategory + '\'' +
                 ", name='" + name + '\'' +
                 ", sku='" + sku + '\'' +
                 ", price=" + price +
