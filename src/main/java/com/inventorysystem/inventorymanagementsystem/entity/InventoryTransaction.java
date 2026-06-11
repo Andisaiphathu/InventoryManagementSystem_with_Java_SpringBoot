@@ -16,7 +16,7 @@ public class InventoryTransaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @ManyToOne // Links with 'private List<Transaction> transactions;' in User
     @JoinColumn(name = "user_id")

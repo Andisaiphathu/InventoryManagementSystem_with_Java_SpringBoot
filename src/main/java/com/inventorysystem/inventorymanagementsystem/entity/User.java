@@ -1,5 +1,6 @@
 package com.inventorysystem.inventorymanagementsystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.inventorysystem.inventorymanagementsystem.enums.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -7,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -39,6 +41,7 @@ public class User {
     private UserRole role;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<InventoryTransaction> transactions;
 
     @Column(name = "created_at")
