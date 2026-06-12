@@ -21,11 +21,10 @@ public class InventoryTransaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int totalProducts;
+    private int quantity;
 
     private double totalPrice;
 
-    private int quantity;
 
     @ManyToOne // Links with 'private List<Transaction> transactions;' in User
     @JoinColumn(name = "user_id")
@@ -73,7 +72,7 @@ public class InventoryTransaction {
     public String toString() {
         return "InventoryTransaction{" +
                 "id=" + id +
-                ", totalProducts=" + totalProducts +
+                ", quantity =" + quantity +
                 ", totalPrice=" + totalPrice +
                 ", transactionType=" + transactionType +
                 ", transactionStatus=" + transactionStatus +
