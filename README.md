@@ -14,26 +14,8 @@ This project serves as both a learning project and a production-style portfolio 
 
 # System Overview
 
-```
-                    React.js Frontend
-                           │
-                           │ HTTP/HTTPS REST API
-                           ▼
-               Spring Boot REST API Server
-                           │
-          ┌────────────────┼────────────────┐
-          │                │                │
-      Security         Business Logic      Validation
-       (JWT)            Services             DTOs
-          │                │
-          └────────────────┼────────────────┘
-                           │
-                      Hibernate / JPA
-                           │
-                      MySQL Database
-```
+<img width="488" height="677" alt="image" src="https://github.com/user-attachments/assets/ce02bffd-f793-40a1-9925-75ea395d9be9" />
 
----
 
 # Technology Stack
 
